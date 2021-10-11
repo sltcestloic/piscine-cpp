@@ -6,13 +6,16 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/09/14 14:01:19 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/10/09 14:54:12 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS	= megaphone.cpp
+SRCS	= main.cpp \
+			newZombie.cpp \
+			randomChump.cpp \
+			Zombie.cpp
 OBJS	= ${SRCS:.cpp=.o}
-NAME	= megaphone
+NAME	= BraiiiiiiinnnzzzZ
 CC		= clang++
 RM		= rm -f
 CFLAGS	= -Wall -Wextra -Werror
