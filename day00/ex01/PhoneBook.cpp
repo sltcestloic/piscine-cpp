@@ -25,15 +25,13 @@ void PhoneBook::add_Contact()
 	contact->setNickname(nickname);
 	contact->setPhoneNumber(phone_number);
 	contact->setDarkestSecret(darkest_secret);
-	cout << contacts[index].getFirstName() << endl;
 	this->index++;
-	cout << "Contact added successfuly. i=" << this->index << endl;
 }
 
 void PhoneBook::search_Contact()
 {
 	cout << "index=" << this->index << endl;
 	for (int i = 0; i < this->index; i++) {
-		cout << i << " " << contacts[index].getFirstName() << contacts[index].getLastName() << contacts[index].getNickname() << endl;
+		cout << "contacts[" << i << "].getFirstName() = " << contacts[i].getFirstName() << endl;
 	}
 }
