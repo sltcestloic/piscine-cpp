@@ -21,8 +21,9 @@ int main(void)
 			phoneBook.add_Contact();
 		else if (action.compare("SEARCH") == 0)
 			phoneBook.search_Contact();
+		else if (cin.eof()) exit (0);
 		else {
-			cout << "Unknown command." << endl;
+			cout << "Unknown command. " << endl;
 			prompt = false;
 		} 
 	}

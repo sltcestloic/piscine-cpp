@@ -47,6 +47,7 @@ void PhoneBook::search_Contact()
 		contacts[i].printDetails();
 	cout << "Please enter the id of a contact: ";
 	getline(cin, input);
+	if (cin.eof()) exit (0);
 	try {
 		index = stoi(input);
 	} catch (invalid_argument) {
