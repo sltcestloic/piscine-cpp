@@ -23,6 +23,11 @@ int main(int ac, char **av) {
 		return 1;
 	}
 
+	if (!*av[2] || !*av[3]) {
+		cout << "Empty parameter." << endl;
+		return 1;
+	}
+
 	std::ifstream	inputFile;
 	std::ofstream	outputFile;
 	string			outputFileName;
