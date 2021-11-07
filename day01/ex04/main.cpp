@@ -47,7 +47,6 @@ int main(int ac, char **av) {
 	string			line;
 	
 	while (std::getline(inputFile, line)) {
-		cout << line << endl;
 		replace(&line, av[2], av[3]);
 		outputFile << line << endl;
 	}
