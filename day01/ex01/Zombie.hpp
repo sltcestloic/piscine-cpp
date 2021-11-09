@@ -3,16 +3,15 @@
 # include <string>
 # include <iostream>
 
-using namespace std;
+using std::string;
 
 class Zombie {
 
 	public:
 		Zombie(string name);
 
-		Zombie	*newZombie(string name);
+		Zombie	*zombieHorde(int n, string name);
 
-		void	randomChump(string name);
 		void	announce();
 		void	setName(string name);
 	private:

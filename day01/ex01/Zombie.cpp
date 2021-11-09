@@ -1,5 +1,8 @@
 #include "Zombie.hpp"
 
+using std::cout;
+using std::endl;
+
 Zombie::Zombie(string name) {
 	this->_name = name;
 }

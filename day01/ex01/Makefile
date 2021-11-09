@@ -6,14 +6,13 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/10/09 14:54:12 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/11/09 11:44:29 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS	= main.cpp \
-			newZombie.cpp \
-			randomChump.cpp \
-			Zombie.cpp
+			Zombie.cpp \
+			ZombieHorde.cpp
 OBJS	= ${SRCS:.cpp=.o}
 NAME	= Moar_Brainz
 CC		= clang++
