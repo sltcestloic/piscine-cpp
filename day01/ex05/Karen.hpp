@@ -5,6 +5,10 @@
 
 class Karen {
 	private:
+		typedef struct s_KarenLevel {
+     	  std::string name;
+       		void (Karen::*func)(void);
+    	} KarenLevel;
 		void	debug();
 		void	info();
 		void	warning();

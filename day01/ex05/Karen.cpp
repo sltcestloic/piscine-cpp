@@ -4,13 +4,15 @@ using std::cout;
 using std::endl;
 
 void Karen::complain(string level) {
-	string levels[] = {
-		"DEBUG",
-		"INFO",
-		"WARNING",
-		"ERROR"
+	KarenLevel levels[] = {
+		{"DEBUG", &Karen::debug},
+		{"INFO", &Karen::info},
+		{"WARNING", &Karen::warning},
+		{"ERROR", &Karen::error}
 	};
-	
+	for (int i = 0; i < 4; i++)
+		if (level == levels[i].name)
+			(this->*levels[i].func)();
 }
 
 void Karen::debug() {
