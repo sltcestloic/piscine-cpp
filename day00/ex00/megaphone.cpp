@@ -1,6 +1,10 @@
 #include <iostream>
-#include <vector>
-using namespace std;
+#include <string>
+#include <cctype>
+
+using std::cout;
+using std::endl;
+using std::string;
 
 int main(int ac, char **av)
 {
@@ -15,7 +19,8 @@ int main(int ac, char **av)
 			args.append(" ");
 		}
 		args.pop_back();
-		transform(args.begin(), args.end(), args.begin(), ::toupper);
-		cout << args << endl;
+		for (size_t i = 0; i < args.length(); i++)
+			cout << (char)std::toupper(args.at(i));
+		cout << endl;
 	}
 }
