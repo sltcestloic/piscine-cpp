@@ -6,7 +6,7 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/09/14 14:01:19 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/12/08 18:15:57 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,7 +15,7 @@ OBJS	= ${SRCS:.cpp=.o}
 NAME	= megaphone
 CC		= clang++
 RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp
 	${CC} ${CFLAGS} -c $< -o $@
