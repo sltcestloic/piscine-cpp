@@ -45,7 +45,7 @@ void Contact::setDarkestSecret(string secret) {
 }
 
 void Contact::setIndex(int index) {
-	this->index = to_string(index);
+	this->index = std::to_string(index);
 }
 
 void Contact::printDetails() {

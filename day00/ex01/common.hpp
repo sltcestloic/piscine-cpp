@@ -3,4 +3,7 @@
 # include <string>
 # include <iostream>
 #endif
-using namespace std;
+
+using std::string;
+using std::cout;
+using std::endl;

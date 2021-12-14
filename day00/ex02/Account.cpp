@@ -2,7 +2,8 @@
 #include <iostream>
 #include <time.h>
 
-using namespace std;
+using std::cout;
+using std::endl;
 
 int Account::_nbAccounts = 0;
 int Account::_totalAmount = 0;

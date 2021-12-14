@@ -15,15 +15,15 @@ void PhoneBook::add_Contact()
 	}
 
 	cout << "First name: ";
-	getline(cin, first_name);
+	std::getline(std::cin, first_name);
 	cout << "Last name: ";
-	getline(cin, last_name);
+	std::getline(std::cin, last_name);
 	cout << "Nickname: ";
-	getline(cin, nickname);
+	std::getline(std::cin, nickname);
 	cout << "Phone number: ";
-	getline(cin, phone_number);
+	std::getline(std::cin, phone_number);
 	cout << "Darkest secret: ";
-	getline(cin, darkest_secret);
+	std::getline(std::cin, darkest_secret);
 
 	contact = &this->contacts[index];
 
@@ -46,11 +46,11 @@ void PhoneBook::search_Contact()
 	for (int i = 0; i < this->index; i++)
 		contacts[i].printDetails();
 	cout << "Please enter the id of a contact: ";
-	getline(cin, input);
-	if (cin.eof()) exit (0);
+	std::getline(std::cin, input);
+	if (std::cin.eof()) exit (0);
 	try {
 		index = stoi(input);
-	} catch (invalid_argument) {
+	} catch (std::invalid_argument) {
 		cout << "Invalid index." << endl;
 		return;
 	}
