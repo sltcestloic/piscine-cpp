@@ -48,47 +48,47 @@ std::ostream &operator<<(std::ostream &os, Fixed const &fixed) {
 	return os;
 }
 
-bool Fixed::operator==(Fixed const &fixed) {
+bool Fixed::operator==(Fixed const &fixed) const {
 	return this->getRawBits() == fixed.getRawBits();
 }
 
-bool Fixed::operator!=(Fixed const &fixed) {
+bool Fixed::operator!=(Fixed const &fixed) const {
 	return this->getRawBits() != fixed.getRawBits();
 }
 
-bool Fixed::operator>(Fixed const &fixed) {
+bool Fixed::operator>(Fixed const &fixed) const {
 	return this->getRawBits() > fixed.getRawBits();
 }
 
-bool Fixed::operator>=(Fixed const &fixed) {
+bool Fixed::operator>=(Fixed const &fixed) const {
 	return this->getRawBits() >= fixed.getRawBits();
 }
 
-bool Fixed::operator<(Fixed const &fixed) {
+bool Fixed::operator<(Fixed const &fixed) const {
 	return this->getRawBits() < fixed.getRawBits();
 }
 
-bool Fixed::operator<=(Fixed const &fixed) {
+bool Fixed::operator<=(Fixed const &fixed) const {
 	return this->getRawBits() <= fixed.getRawBits();
 }
 
-Fixed Fixed::operator+(Fixed const &fixed) {
+Fixed Fixed::operator+(Fixed const &fixed) const {
 	Fixed ret;
 	ret._value = this->_value + fixed.getRawBits();
 	return (ret);
 }
 
-Fixed Fixed::operator-(Fixed const &fixed) {
+Fixed Fixed::operator-(Fixed const &fixed) const {
 	Fixed ret;
 	ret._value = this->_value - fixed.getRawBits();
 	return (ret);
 }
 
-Fixed Fixed::operator*(Fixed const &fixed) {
+Fixed Fixed::operator*(Fixed const &fixed) const {
 	return (Fixed(this->toFloat() * fixed.toFloat()));
 }
 
-Fixed Fixed::operator/(Fixed const &fixed) {
+Fixed Fixed::operator/(Fixed const &fixed) const {
 	return (Fixed(this->toFloat() / fixed.toFloat()));
 }
 
