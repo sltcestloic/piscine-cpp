@@ -47,13 +47,13 @@ int main(void) {
 	cout << "a / b = " << a / b << endl;
 
 	cout << "a++ = " << a++ << endl;
-	cout << "a is " << a << endl;
+	cout << "a = " << a << endl;
 	cout << "a-- = " << a-- << endl;
-	cout << "a is " << a << endl;
+	cout << "a = " << a << endl;
 	cout << "++a = " << ++a << endl;
-	cout << "a is " << a << endl;
+	cout << "a = " << a << endl;
 	cout << "--a = " << --a << endl;
-	cout << "a is " << a << endl;
+	cout << "a = " << a << endl;
 
 	cout << "max(a, b) = " << Fixed::max(a, b) << endl;
 	cout << "min(a, b) = " << Fixed::min(a, b) << endl;
