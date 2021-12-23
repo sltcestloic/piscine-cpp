@@ -14,14 +14,14 @@ int main(void)
 			cout << "=================================" << endl;
 		}
 		prompt = true;
-		getline(cin, action);
+		getline(std::cin, action);
 		if (action.compare("EXIT") == 0)
 			exit(0);
 		else if (action.compare("ADD") == 0)
 			phoneBook.add_Contact();
 		else if (action.compare("SEARCH") == 0)
 			phoneBook.search_Contact();
-		else if (cin.eof()) exit (0);
+		else if (std::cin.eof()) exit (0);
 		else {
 			cout << "Unknown command. " << endl;
 			prompt = false;
