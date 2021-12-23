@@ -7,12 +7,10 @@ using std::endl;
 const int Fixed::bits = 8;
 
 Fixed::Fixed(void) {
-	cout << "Default constructor called" << endl;
 	this->_value = 0;
 }
 
 Fixed::Fixed(Fixed const &fixed) {
-	cout << "Copy constructor called" << endl;
 	*this = fixed;
 }
 
@@ -33,11 +31,9 @@ int Fixed::toInt() const {
 }
 
 Fixed::~Fixed(void) {
-	cout << "Destructor called" << endl;
 }
 
 Fixed &Fixed::operator=(Fixed const &fixed) {
-	std::cout << "Assignation operator called" << endl;
 	if (this != &fixed)
 		this->_value = fixed.getRawBits();
 	return *this;
@@ -92,6 +88,28 @@ Fixed Fixed::operator/(Fixed const &fixed) const {
 	return (Fixed(this->toFloat() / fixed.toFloat()));
 }
 
+Fixed &Fixed::operator--(void) {
+	_value--;
+	return *this;
+}
+
+Fixed Fixed::operator--(int) {
+	Fixed ret(*this);
+	this->operator--();
+	return ret;
+}
+
+Fixed &Fixed::operator++(void) {
+	_value++;
+	return *this;
+}
+
+Fixed Fixed::operator++(int) {
+	Fixed ret(*this);
+	this->operator++();
+	return ret;
+}
+
 Fixed Fixed::max(Fixed const &f1, Fixed const &f2) {
 	return f1 >= f2 ? f1 : f2;
 }
@@ -105,6 +123,5 @@ void Fixed::setRawBits(int const raw) {
 }
 
 int Fixed::getRawBits(void) const {
-	cout << "getRawBits function called" << endl;
 	return this->_value;
 }

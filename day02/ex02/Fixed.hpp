@@ -15,16 +15,23 @@ class Fixed {
 		~Fixed(void);
 
 		Fixed			&operator=(Fixed const &fixed);
+
 		bool			operator==(Fixed const &fixed) const;
 		bool			operator!=(Fixed const &fixed) const;
 		bool			operator>(Fixed const &fixed) const;
 		bool			operator>=(Fixed const &fixed) const;
 		bool			operator<(Fixed const &fixed) const;
 		bool			operator<=(Fixed const &fixed) const;
+
 		Fixed			operator+(Fixed const &fixed) const;
 		Fixed			operator-(Fixed const &fixed) const;
 		Fixed			operator*(Fixed const &fixed) const;
 		Fixed			operator/(Fixed const &fixed) const;
+
+		Fixed			operator--(int); //Post decrementation
+		Fixed			&operator--(void); //Pre decrementation
+		Fixed			operator++(int); //Post incrementation
+		Fixed			&operator++(void); //Pre incrementation
 
 		int				getRawBits(void) const;
 		void			setRawBits(int const raw);
