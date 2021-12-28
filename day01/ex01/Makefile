@@ -6,7 +6,7 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/11/09 11:44:29 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/12/28 16:11:57 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ OBJS	= ${SRCS:.cpp=.o}
 NAME	= Moar_Brainz
 CC		= clang++
 RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp
 	${CC} ${CFLAGS} -c $< -o $@

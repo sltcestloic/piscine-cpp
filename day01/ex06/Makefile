@@ -6,7 +6,7 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2021/11/18 09:37:45 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2021/12/28 16:12:18 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,7 +16,7 @@ OBJS	= ${SRCS:.cpp=.o}
 NAME	= karen-filter
 CC		= clang++
 RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror
+CFLAGS	= -Wall -Wextra -Werror -std=c++98
 
 %.o: %.cpp
 	${CC} ${CFLAGS} -c $< -o $@
