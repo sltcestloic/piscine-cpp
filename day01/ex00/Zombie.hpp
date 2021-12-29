@@ -9,6 +9,7 @@ class Zombie {
 
 	public:
 		Zombie(string name);
+		~Zombie();
 
 		Zombie	*newZombie(string name);
 

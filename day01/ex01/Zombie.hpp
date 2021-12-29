@@ -10,6 +10,7 @@ class Zombie {
 	public:
 		Zombie(string name);
 		Zombie();
+		~Zombie();
 
 		void	announce();
 		void	setName(string name);

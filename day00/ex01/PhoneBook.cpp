@@ -43,6 +43,7 @@ void PhoneBook::search_Contact()
 {
 	int index;
 	string input;
+	if (this->index == 0) return ;
 	for (int i = 0; i < this->index; i++)
 		contacts[i].printDetails();
 	cout << "Please enter the id of a contact: ";
@@ -54,7 +55,7 @@ void PhoneBook::search_Contact()
 		cout << "Invalid index." << endl;
 		return;
 	}
-	if (index > this->index || index < 0)
+	if (index >= this->index || index < 0)
 		cout << "There is no contact at index " << index << "." << endl;
 	else
 		this->contacts[index].printCard();

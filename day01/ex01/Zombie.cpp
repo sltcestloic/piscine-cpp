@@ -11,6 +11,10 @@ Zombie::Zombie() {
 	this->_name = "Default";
 }
 
+Zombie::~Zombie() {
+	cout << this->_name << " destructor called" << endl;
+}
+
 void Zombie::announce() {
 	cout << "<" << this->_name << "> BraiiiiiiinnnzzzZ..." << endl;
 }

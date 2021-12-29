@@ -13,7 +13,7 @@ DiamondTrap::DiamondTrap(DiamondTrap &ref) {
 	cout << "DiamondTrap " << _name << " has been created" << endl;
 }
 
-DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name"), ScavTrap(name), FragTrap(name) {
+DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name) {
 	this->_name = name;
 	this->setHitPoints(100);
 	this->setEnergyPoints(50);
