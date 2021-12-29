@@ -9,13 +9,14 @@ class Zombie {
 
 	public:
 		Zombie(string name);
-
-		Zombie	*zombieHorde(int n, string name);
+		Zombie();
 
 		void	announce();
 		void	setName(string name);
 	private:
 		string	_name;
 };
+
+Zombie	*zombieHorde(int n, string name);
 
 #endif
