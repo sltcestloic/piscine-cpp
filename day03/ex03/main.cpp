@@ -1,20 +1,13 @@
 #include "ClapTrap.hpp"
 #include "ScavTrap.hpp"
 #include "FragTrap.hpp"
+#include "DiamondTrap.hpp"
+
+using std::cout;
+using std::endl;
 
 int main() {
-	ClapTrap albert("Albert");
-	ClapTrap bobby("Bobby");
+	DiamondTrap diamondTrap("Salut");
 
-	ScavTrap henry("Henry");
-
-	albert.attack("Hervé");
-	bobby.takeDamage(8);
-	bobby.beRepaired(3);
-
-	henry.guardGate();
-
-	FragTrap fragTrap("René");
-
-	fragTrap.highFiveGuys();
+	diamondTrap.whoAmI();
 }

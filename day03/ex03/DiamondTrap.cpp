@@ -21,6 +21,20 @@ DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name"), FragTrap(
 	cout << "DiamondTrap " << _name << " has been created" << endl;
 }
 
-DiamondTrap::attack(string const &target) {
+DiamondTrap::~DiamondTrap() {
+	cout << "DiamondTrap " << _name << " has been destroyed" << endl;
+}
+
+void DiamondTrap::attack(string const &target) {
 	ScavTrap::attack(target);
+}
+
+void DiamondTrap::whoAmI() {
+	cout << "<" << _name << "> my name is " << _name << " and my claptrap name is " << this->ClapTrap::_name << endl; 
+}
+
+DiamondTrap &DiamondTrap::operator=(DiamondTrap &ref) {
+	if (this != &ref)
+		*this = ref;
+	return *this;
 }
