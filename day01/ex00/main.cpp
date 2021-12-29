@@ -9,7 +9,7 @@ int main() {
 
 	zombie_p->announce();
 
-	free(zombie_p);
+	delete zombie_p;
 
 	zombie.randomChump("Bruce");
 }
