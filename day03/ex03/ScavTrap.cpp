@@ -22,7 +22,9 @@ ScavTrap::~ScavTrap() {
 	cout << "ScavTrap " << this->_name << " destructor called" << endl;
 }
 
-ScavTrap &ScavTrap::operator=(ScavTrap const &) {
+ScavTrap &ScavTrap::operator=(ScavTrap const &ref) {
+	if (this != &ref)
+		ClapTrap::operator=(ref);
 	return *this;
 }
 
