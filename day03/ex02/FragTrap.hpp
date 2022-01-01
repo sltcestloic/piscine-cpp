@@ -5,7 +5,7 @@
 
 using std::string;
 
-class FragTrap : ClapTrap {
+class FragTrap : public ClapTrap {
 	public:
 		FragTrap();
 		FragTrap(string name);

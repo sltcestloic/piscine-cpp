@@ -6,7 +6,7 @@
 
 using std::string;
 
-class ScavTrap : ClapTrap {
+class ScavTrap : public ClapTrap {
 	public:
 		ScavTrap();
 		ScavTrap(string name);
