@@ -10,19 +10,19 @@ DiamondTrap::DiamondTrap() {
 
 DiamondTrap::DiamondTrap(DiamondTrap &ref) {
 	*this = ref;
-	cout << "DiamondTrap " << _name << " has been created" << endl;
+	cout << "DiamondTrap " << _name << " copy constructor called" << endl;
 }
 
-DiamondTrap::DiamondTrap(string name) : ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name) {
-	this->_name = name;
-	this->setHitPoints(100);
-	this->setEnergyPoints(50);
-	this->setAttackDamage(30);
-	cout << "DiamondTrap " << _name << " has been created" << endl;
+DiamondTrap::DiamondTrap(string name) : ClapTrap(name), FragTrap(name), ScavTrap(name), _name(name) {
+	this->ClapTrap::_name = name + "_clap_name";
+	this->_hit_points = 100;
+	this->_energy_points = 50;
+	this->_attack_damage = 30;
+	cout << "DiamondTrap " << _name << " constructor called" << endl;
 }
 
 DiamondTrap::~DiamondTrap() {
-	cout << "DiamondTrap " << _name << " has been destroyed" << endl;
+	cout << "DiamondTrap " << _name << " destructor called" << endl;
 }
 
 void DiamondTrap::attack(string const &target) {
@@ -30,7 +30,7 @@ void DiamondTrap::attack(string const &target) {
 }
 
 void DiamondTrap::whoAmI() {
-	cout << "<" << _name << "> my name is " << _name << " and my claptrap name is " << this->ClapTrap::_name << endl; 
+	cout << "<" << this->_name << "> my name is " << this->_name << " and my claptrap name is " << this->ClapTrap::_name << endl; 
 }
 
 DiamondTrap &DiamondTrap::operator=(DiamondTrap &ref) {

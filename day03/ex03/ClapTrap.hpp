@@ -18,15 +18,6 @@ class ClapTrap {
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);
 
-		string	getName();
-		int		getHitPoints();
-		int		getEnergyPoints();
-		int		getAttackDamage();
-
-		void	setName(string name);
-		void	setHitPoints(int amount);
-		void	setEnergyPoints(int amount);
-		void	setAttackDamage(int amount);
 	protected:
 		string	_name;
 		int		_hit_points;

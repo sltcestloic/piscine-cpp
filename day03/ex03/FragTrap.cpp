@@ -7,21 +7,19 @@ FragTrap::FragTrap() {
 	cout << "Default FragTrap constructor called" << endl;
 }
 
-FragTrap::FragTrap(string name) {
-	this->setName(name);
-	this->setHitPoints(100);
-	this->setEnergyPoints(100);
-	this->setAttackDamage(30);
-	cout << "FragTrap " << getName() << " has been created" << endl;
+FragTrap::FragTrap(string name) : ClapTrap(name) {
+	this->_hit_points = 100;
+	this->_energy_points = 100;
+	this->_attack_damage = 30;
+	cout << "FragTrap " << this->_name << " constructor called" << endl;
 }
 
-FragTrap::FragTrap(FragTrap &ref) {
-	*this = ref;
-	cout << "FragTrap " << getName() << " has been created" << endl;
+FragTrap::FragTrap(FragTrap &ref) : ClapTrap(ref) {
+	cout << "FragTrap " << this->_name << " copy constructor called" << endl;
 }
 
 FragTrap::~FragTrap() {
-	cout << "FragTrap " << getName() << " has been destroyed" << endl;
+	cout << "FragTrap " << this->_name << " destructor called" << endl;
 }
 
 FragTrap &FragTrap::operator=(FragTrap const &ref) {
@@ -31,5 +29,5 @@ FragTrap &FragTrap::operator=(FragTrap const &ref) {
 }
 
 void FragTrap::highFiveGuys() {
-	cout << "<" << getName() << "> high five guys !" << endl;
+	cout << "<" << this->_name << "> high five guys !" << endl;
 }

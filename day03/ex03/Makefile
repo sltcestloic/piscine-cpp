@@ -19,7 +19,7 @@ OBJS	= ${SRCS:.cpp=.o}
 NAME	= claptrap
 CC		= clang++
 RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror -std=c++98 -Wshadow
+CFLAGS	= -Wall -Wextra -Werror -Wshadow -std=c++98
 
 %.o: %.cpp
 	${CC} ${CFLAGS} -c $< -o $@
