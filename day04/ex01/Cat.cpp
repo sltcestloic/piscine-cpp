@@ -8,7 +8,8 @@ Cat::Cat() {
 
 Cat::Cat(Cat const &ref) {
 	this->_type = ref._type;
-	this->_brain = ref._brain;
+	this->_brain = new Brain();
+	*(this->_brain) = *(ref._brain);
 	cout << "Cat copy constructor called" << endl;
 }
 
@@ -19,9 +20,14 @@ Cat &Cat::operator=(Cat const &ref) {
 }
 
 Cat::~Cat() {
+	delete this->_brain;
 	cout << "Cat default destructor called" << endl;
 }
 
 void Cat::makeSound() const {
 	cout << "Meow !" << endl;
+}
+
+Brain* Cat::getBrain() {
+	return this->_brain;
 }

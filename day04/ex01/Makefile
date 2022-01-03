@@ -6,7 +6,7 @@
 #    By: lbertran <lbertran@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/11/18 16:40:32 by lbertran          #+#    #+#              #
-#    Updated: 2022/01/02 16:13:16 by lbertran         ###   ########lyon.fr    #
+#    Updated: 2022/01/03 13:56:31 by lbertran         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ SRCS	= main.cpp \
 			Animal.cpp \
 			Dog.cpp \
 			Cat.cpp \
-			WrongCat.cpp \
-			WrongAnimal.cpp
+			Brain.cpp
 OBJS	= ${SRCS:.cpp=.o}
 NAME	= animal
 CC		= clang++

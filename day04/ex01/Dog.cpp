@@ -8,7 +8,8 @@ Dog::Dog() {
 
 Dog::Dog(Dog const &ref) {
 	this->_type = ref._type;
-	this->_brain = ref._brain;
+	this->_brain = new Brain();
+	*(this->_brain) = *(ref._brain);
 	cout << "Dog copy constructor called" << endl;
 }
 
@@ -24,4 +25,8 @@ Dog::~Dog() {
 
 void Dog::makeSound() const {
 	cout << "Woof !" << endl;
+}
+
+Brain* Dog::getBrain() {
+	return this->_brain;
 }
