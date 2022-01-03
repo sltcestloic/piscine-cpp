@@ -5,10 +5,10 @@
 int main() {
 	
 
-	/* Dog *dog = new Dog();
+	Dog *dog = new Dog();
 
-	dog->makeSound(); */
-	AAnimal *animal = new AAnimal(); //doesn't compile, AAnimal is abstract
+	dog->makeSound();
+	/* AAnimal *animal = new AAnimal(); //doesn't compile, AAnimal is abstract
 
-	animal->makeSound();
+	animal->makeSound(); */
 }
