@@ -23,6 +23,8 @@ class Bureaucrat
         void increaseGrade(void);
         void decreaseGrade(void);
 
+		void signForm(Form const &form);
+
 		class GradeTooHighException : public std::exception {
             public:
                 const char*	what() const throw() {

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <fstream>
-#include <ios>
 
 using std::cout;
 using std::endl;

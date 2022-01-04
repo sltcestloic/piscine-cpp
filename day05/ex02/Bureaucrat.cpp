@@ -32,6 +32,16 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
 	return *this;
 }
 
+void	Bureaucrat::signForm(Form const &form) {
+	form.beSigned(*this);
+	std::cout << this->getName() << " signs " << form.getName() << "\n";
+}
+
+void	Bureaucrat::executeForm(Form const &form) {
+	form.execute(*this);
+	std::cout << this->getName() << " execute " << form.getName() << "\n";
+}
+
 void Bureaucrat::increaseGrade(void) {
 
 	if (this->_grade == 1)
