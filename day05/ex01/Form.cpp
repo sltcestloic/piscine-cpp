@@ -32,6 +32,16 @@ Form::Form(Form const &ref) {
 Form::~Form() {
 }
 
+Form &Form::operator=(Form const &ref) {
+	if (this != &ref) {
+		this->_name = ref.getName();
+		this->_signed = ref.isSigned();
+		this->_grade_to_sign = ref.getGradeToSign();
+		this->_grade_to_exec = ref.getGradeToExec();
+	}
+	return *this;
+}
+
 Form &Form::beSigned(Bureaucrat &bureaucrat){
 	if (bureaucrat.getGrade() > this->getGradeToSign())
 		throw Form::GradeTooLowException();

@@ -15,7 +15,7 @@ class Form {
         Form();
 		Form(std::string name, int to_sign, int to_exec);
 		Form(Form const &ref);
-		~Form();
+		virtual ~Form();
 
 		Form &beSigned(Bureaucrat &bureaucrat);
 		
@@ -23,6 +23,8 @@ class Form {
 		int getGradeToSign() const;
 		int getGradeToExec() const;
 		bool isSigned() const;
+
+		Form &operator=(Form const &ref);
 
 		virtual void execute(Bureaucrat const &executor) const = 0;
 

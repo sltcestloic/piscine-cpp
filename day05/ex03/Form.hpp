@@ -3,6 +3,8 @@
 
 #include "Bureaucrat.hpp"
 
+class Bureaucrat;
+
 class Form {
     private:
         std::string _name;
@@ -13,7 +15,7 @@ class Form {
         Form();
 		Form(std::string name, int to_sign, int to_exec);
 		Form(Form const &ref);
-		~Form();
+		virtual ~Form();
 
 		Form &beSigned(Bureaucrat &bureaucrat);
 		
@@ -21,6 +23,8 @@ class Form {
 		int getGradeToSign() const;
 		int getGradeToExec() const;
 		bool isSigned() const;
+
+		virtual void execute(Bureaucrat const &executor) const = 0;
 
 		Form &operator=(Form const &ref);
 
@@ -34,6 +38,12 @@ class Form {
 			public:
 				const char *what() const throw() {
 					return "Failed to sign form: bureaucrat grade is too low !";
+				}
+		};
+		class NotSignedException : std::exception {
+			public:
+				const char *what() const throw() {
+					return "Failed to execure form: form is not signed !";
 				}
 		};
 };
