@@ -5,35 +5,36 @@
 #include "PresidentialPardonForm.hpp"
 
 int main() {
-    Bureaucrat a("John", 50);
+    Bureaucrat a("John", 1);
 
     std::cout << a << std::endl;
 
     try {
-		Form formS = ShrubberyCreationForm("Bob");
-		Form formR = RobotomyRequestForm("Henry");
-		Form formP = PresidentialPardonForm("Thierry");
-		std::cout << formS << std::endl;
-		std::cout << formR << std::endl;
-		std::cout << formP << std::endl;
+		Form* form_s = new ShrubberyCreationForm("Bob");
+		Form* form_r = new RobotomyRequestForm("Henry");
+		Form* form_p = new PresidentialPardonForm("Thierry");
 
-		a.signForm(formS);
-		a.executeForm(formS);
+		std::cout << *form_s << std::endl;
+		std::cout << *form_r << std::endl;
+		std::cout << *form_p << std::endl;
 
-		a.signForm(formR);
-		a.executeForm(formR);
+		a.signForm(*form_s);
+		a.executeForm(*form_s);
 
-		a.signForm(formP);
-		a.executeForm(formP);
+		a.signForm(*form_r);
+		a.executeForm(*form_r);
 
-		std::cout << formS << std::endl;
-		std::cout << formR << std::endl;
-		std::cout << formP << std::endl;
+		a.signForm(*form_p);
+		a.executeForm(*form_p);
+
+		delete form_s;
+		delete form_r;
+		delete form_p;
 	} catch (Form::GradeTooLowException &e) {
-		std::cout << "Error: " << e.what() << std::endl;	
+		std::cout << e.what() << std::endl;	
 	} catch (Form::NotSignedException &e) {
-		std::cout << "Error: " << e.what() << std::endl;	
+		std::cout << e.what() << std::endl;	
 	} catch (Form::GradeTooHighException &e) {
-		std::cout << "Error: " << e.what() << std::endl;	
+		std::cout << e.what() << std::endl;	
 	}
 }

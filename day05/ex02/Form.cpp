@@ -32,7 +32,7 @@ Form::Form(Form const &ref) {
 Form::~Form() {
 }
 
-Form &Form::beSigned(Bureaucrat &bureaucrat){
+Form &Form::beSigned(Bureaucrat &bureaucrat) {
 	if (bureaucrat.getGrade() > this->getGradeToSign())
 		throw Form::GradeTooLowException();
 	this->_signed = true;

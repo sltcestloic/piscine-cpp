@@ -32,14 +32,22 @@ Bureaucrat &Bureaucrat::operator=(const Bureaucrat &rhs) {
 	return *this;
 }
 
-void	Bureaucrat::signForm(Form const &form) {
-	form.beSigned(*this);
-	std::cout << this->getName() << " signs " << form.getName() << "\n";
+void Bureaucrat::signForm(Form &form) {
+	std::cout << this->getName() << " signs " << form.getName() << std::endl;
+	try {
+		form.beSigned(*this);
+	} catch (Form::GradeTooLowException &ex) {
+		std::cout << this->_name << " cannot sign because his grade is too low." << std::endl;
+	}
 }
 
-void	Bureaucrat::executeForm(Form const &form) {
-	form.execute(*this);
-	std::cout << this->getName() << " execute " << form.getName() << "\n";
+void Bureaucrat::executeForm(Form const &form) {
+	std::cout << this->getName() << " execute " << form.getName() << std::endl;
+	try {
+		form.execute(*this);
+	} catch (Form::GradeTooLowException &ex) {
+		std::cout << this->_name << " cannot execute form because his grade is too low." << std::endl;
+	}
 }
 
 void Bureaucrat::increaseGrade(void) {

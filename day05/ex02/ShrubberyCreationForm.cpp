@@ -24,7 +24,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
 
     file.open(targetName);
     for (int i = 0; i < 5; i++) {
-        file << "         v              " << std::endl;
         file << "        >X<             " << std::endl;
         file << "         A              " << std::endl;
         file << "        d$b             " << std::endl;
@@ -40,6 +39,6 @@ void	ShrubberyCreationForm::execute(Bureaucrat const &executor) const {
         file << ".d$$$$i$$$\\$$$$$$b.     " << std::endl;
         file << "        ###             " << std::endl;
         file << "        ###             " << std::endl;
-        file << "        ###             " << std::endl;
+        file << "        ###             " << std::endl << std::endl << std::endl;
     }
 }
