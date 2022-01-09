@@ -1,7 +1,6 @@
 #include "iter.hpp"
 #include <iostream>
 
-
 int main() {
 	std::string array_str[4] = {"alo", "cc", "ca va", "bjr"};
 	int array_int[4] = {1, 2, 3, 4};
