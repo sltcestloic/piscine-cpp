@@ -11,6 +11,9 @@ int main() {
     Form form_a("Form A", 25, 30);
     Form form_b("Form B", 40, 20);
 
+	std::cout << form_a << std::endl;
+	std::cout << form_b << std::endl;
+
     try {
         a.signForm(form_a);
     } catch (Form::GradeTooLowException &ex) {

@@ -49,7 +49,7 @@ int main(int ac, char **av) {
 	}
 	string input = av[1];
 	double value;
-	if (std::isprint(input.at(0)) && !std::isdigit(input.at(0)))
+	if (std::isprint(input.at(0)) && !std::isdigit(input.at(0)) && input.length() == 1)
 		value = input.at(0);
 	else
 		value = atof(av[1]);
