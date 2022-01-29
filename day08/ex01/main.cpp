@@ -18,7 +18,7 @@ int main() {
 	std::cout << "--- Copy test ---" << std::endl;
 
 	Span sp_copy(sp);
-	sp_copy.addNumber(256);
+	sp.addNumber(256);
 
 	std::cout << "sp: " << std::endl;
 	sp.display();
@@ -26,4 +26,26 @@ int main() {
 	std::cout << "sp_copy: " << std::endl;
 	sp_copy.display();
 	std::cout << std::endl;
+
+	std::cout << "--- Exception test ---" << std::endl;
+
+	try {
+		sp.addNumber(50);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Vector is full !" << std::endl;
+	}
+	
+
+	std::cout << "--- Big vector test ---" << std::endl;
+
+	Span big(15000);
+	std::srand(unsigned(std::time(nullptr)));
+	std::vector<int> v(15000);
+	std::generate(v.begin(), v.end(), std::rand);
+	for (size_t i = 0; i < v.size(); ++i)
+		big.addNumber(v.at(i));
+	std::cout << big.shortestSpan() << std::endl;
+	std::cout << big.longestSpan() << std::endl;
 }
