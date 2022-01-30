@@ -33,31 +33,31 @@ void Span::addNumber(int number) {
 }
 
 int Span::longestSpan() {
-	int ret = 0;
-	std::vector<int>::iterator it1 = _vect.begin();
-	std::vector<int>::iterator it2 = ++_vect.begin();
-	for (; it2 != _vect.end(); it1++)
-	{
-		if (abs(*it1 - *it2) > ret)
-			ret = abs(*it1 - *it2);
-		it2++;
-	}
-	return ret;
+	if (this->_vect.size() < 2)
+		throw std::out_of_range("Vector needs at least 2 elements to find a span.");
+
+	int min, max;
+
+    min = *std::min_element(this->_vect.begin(), this->_vect.end());
+    max = *std::max_element(this->_vect.begin(), this->_vect.end());
+
+    return max - min;
 }
 
 int Span::shortestSpan() {
-	int ret = INT_MAX;
-	std::vector<int>::iterator it1 = _vect.begin();
-	std::vector<int>::iterator it2 = ++_vect.begin();
-	for (; it2 != _vect.end(); it1++)
-	{
-		if (abs(*it1 - *it2) < ret)
-			ret = abs(*it1 - *it2);
-		it2++;
-	}
-	return ret;
-}
+	if (this->_vect.size() < 2)
+		throw std::out_of_range("Vector needs at least 2 elements to find a span.");
 
+	int ret = INT_MAX;
+    std::vector<int>::const_iterator it;
+    std::vector<int>::const_iterator ite;
+
+    for(it = this->_vect.begin(); it != this->_vect.end() - 1; ++it)
+        for (ite = it + 1; ite != this->_vect.end(); ++ite)
+            if (abs(*it - *ite) < ret)
+                ret = abs(*it - *ite);
+    return ret;
+}
 void Span::display()
 {
 	for (size_t i = 0; i < this->_vect.size(); ++i) {
