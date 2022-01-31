@@ -41,11 +41,7 @@ int main() {
 	std::cout << "--- Big vector test ---" << std::endl;
 
 	Span big(15000);
-	std::srand(unsigned(std::time(nullptr)));
-	std::vector<int> v(15000);
-	std::generate(v.begin(), v.end(), std::rand);
-	for (size_t i = 0; i < v.size(); ++i)
-		big.addNumber(v.at(i));
+	big.generate();
 	std::cout << big.shortestSpan() << std::endl;
 	std::cout << big.longestSpan() << std::endl;
 }

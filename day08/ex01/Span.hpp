@@ -17,6 +17,7 @@ class Span {
 		int shortestSpan();
 		int longestSpan();
 		void display();
+		void generate();
 };
 
 #endif

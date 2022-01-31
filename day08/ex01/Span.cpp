@@ -58,9 +58,15 @@ int Span::shortestSpan() {
                 ret = abs(*it - *ite);
     return ret;
 }
+
 void Span::display()
 {
 	for (size_t i = 0; i < this->_vect.size(); ++i) {
         std::cout << this->_vect.at(i) << std::endl;
     }
+}
+
+void Span::generate() {
+    srand(time(0));
+    std::generate_n(std::back_inserter(this->_vect), this->_n, std::rand);
 }
